@@ -16,7 +16,6 @@ OptionParser.new do |opts|
   opts.banner = "Usage: timerepo.rb [options]"
 
   opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
-    puts "v: #{v}"
     options[:verbose] = v
     DEBUG = true
   end
