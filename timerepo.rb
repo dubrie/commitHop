@@ -21,7 +21,7 @@ OptionParser.new do |opts|
     DEBUG = true
   end
 
-  opts.on("-d", "--date_override #{DATE_FORMAT}", "Override the current date, defaults to current system date.)") do |d|
+  opts.on("-d", "--date_override #{DATE_FORMAT}", "Override the current date, defaults to current system date.") do |d|
     options[:cur_date] = DateTime.now
     if d 
         if DEBUG
