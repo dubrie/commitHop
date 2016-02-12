@@ -7,7 +7,7 @@ A Historical recall of your git checkin history, one year at a time.
 
 There is a concept of a 6 month rule in programming that states:
 
-> "Every programer should look at what they were doing 6 months ago and be disgusted about the way they were doing things" [source](http://blog.marcomonteiro.net/post/the-six-months-rule)
+> "[Every programer should look at what they were doing 6 months ago and be disgusted about the way they were doing things](http://blog.marcomonteiro.net/post/the-six-months-rule)" 
 
 That isn't to say that everything you've done in the past is terrible, but reflecting on where you were is an excellent way 
 to measure your growth over time. If you aren't making mistakes, you aren't pushing the boundaries enough and potentially not growing.
