@@ -30,6 +30,16 @@ OptionParser.new do |opts|
     end
   end
 
+  opts.on("-a", "--author git_user", "Filter results by a specific git user's email address.") do |a|
+    options[:author] = nil
+    if a
+        if DEBUG
+            puts "filtering by author #{a}"
+        end
+        options[:author] = a
+    end
+  end
+
 end.parse!
 
 if DEBUG
@@ -38,6 +48,7 @@ end
 
 output = []
 cur_date = options[:cur_date] || DateTime.now
+author = options[:author] || nil
 
 repositories.each do |repo_name, repo_info|
     # Find the date of the first commit for this repo
@@ -64,9 +75,12 @@ repositories.each do |repo_name, repo_info|
 
         # Set the git log options that we care about to assert a certain format and author 
         log_options = []
-        log_options << "--pretty=\"%cd\t%H\t[%h]\t%s\""
+        log_options << "--pretty=\"%cd\t%ae\t[%h]\t%s\""
         log_options << "--since=\"#{start_date.strftime(DATE_FORMAT)}\""
         log_options << "--before=\"#{cur_date.strftime(DATE_FORMAT)}\""
+        if author
+            log_options << "--author=\"#{author}\""
+        end
         log_options << "--no-merges"
         log_options << "--date=short"
 
@@ -81,7 +95,7 @@ repositories.each do |repo_name, repo_info|
             output << "#{repo_name} #{commits.length} commits from #{cur_date.strftime(DATE_FORMAT)} ago..."
             commits.each do | commit |
                 commit_info = commit.split("\t") 
-                output << "  #{commit_info[0]} - #{commit_info[3]} #{commit_info[2]}\n"
+                output << "  #{commit_info[0]} - #{commit_info[1]} - #{commit_info[3]} #{commit_info[2]}\n"
             end
 
             output << "\n"
