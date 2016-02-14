@@ -1,4 +1,4 @@
 :repositories:
     timerepo:
-        remote_url: https://github.com/dubrie/timerepo.git
-        local_path: /my/local/repo/path/timerepo
+        remote_url: https://github.com/dubrie/commitHop.git
+        local_path: /my/local/repo/path/commitHop

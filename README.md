@@ -1,4 +1,4 @@
-Timerepo
+commitHop
 =========
 
 A Historical recall of your git checkin history, one year at a time.
@@ -14,7 +14,7 @@ to measure your growth over time. If you aren't making mistakes, you aren't push
 
 ## Usage
 ```
-ruby timerepo.rb [options]
+ruby commitHop.rb [options]
 ```
 
 ## Options

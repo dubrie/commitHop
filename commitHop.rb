@@ -13,7 +13,7 @@ repositories = YAML.load_file("repositories.yaml")[:repositories]
 # Parse the command line options
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: timerepo.rb [options]"
+  opts.banner = "Usage: commitHop.rb [options]"
 
   opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
     options[:verbose] = v
